@@ -1,5 +1,7 @@
 L = 1;
 global Div;
+global u0    %初期条件[K]
+u0 = 30;
 Div = 50;
 x = linspace(0,L ,Div);
 t = [linspace(0,100,Div)];    %[s]
@@ -65,7 +67,7 @@ f = dudx * ThermalConductivity(x)  ;
 s = 0;
 end
 function u0 = heatic(x)   %initial Condition
-u0 = 30;
+global u0;
 end
 function [pl,ql,pr,qr] = heatbc(xl,ul,xr,ur,t) %Boundary Condition
 WireTemp = 200;   %[K]
